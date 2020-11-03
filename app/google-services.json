@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "785328332265",
+    "firebase_url": "https://ssd-store-daa83.firebaseio.com",
+    "project_id": "ssd-store-daa83",
+    "storage_bucket": "ssd-store-daa83.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785328332265:android:2e6218add6f9f3cd793f78",
+        "android_client_info": {
+          "package_name": "com.example.ssd_tienda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785328332265-4a3v5kutuvtggd4ck8ddog0qv0kn2t4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ssd_tienda",
+            "certificate_hash": "64af84bf3235e44611e6f2984d0f87c9288355f8"
+          }
+        },
+        {
+          "client_id": "785328332265-0u9ab90pusiukjlca0sp43ue44ngculh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTNyJmhOD8KxgPqw3NRUW8YQ8kv2dFXFc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785328332265-0u9ab90pusiukjlca0sp43ue44ngculh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

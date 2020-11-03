@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#00fff7"
+    android:id="@+id/drawer_layout"
+    tools:context=".HomeActivity"
+    >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/main_toolbar"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:text="@string/bienvenido_a_la_ssd_tienda_somos_una_micro_empresa_orgullosamente_de_la_ciudad_de_san_andres_tuxtla_y_tenemos_como_misi_n_ofrecer_dispositivos_de_almacenamiento_de_estado_s_lido_para_equipo_de_c_mputo_de_nuestros_clientes_con_la_mejor_calidad_variedad_y_precio_ncontamos_varios_m_todos_de_pago_as_como_env_o_gratis_en_la_ciudad_el_mismo_d_a"
+                android:gravity="center_horizontal" />
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/medios"/>
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnCata"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textColor="#ff0000"
+            android:background="#00ff00"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="@string/ir_al_cat_logo"/>
+
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/color_white">
+        <include
+            layout="@layout/main_nav_drawer"/>
+    </RelativeLayout>
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SSD-TIENDA</string>
+    <string name="ssd_tienda">SSD-TIENDA</string>
+    <string name="inicio">Inicio</string>
+    <string name="ssd">SSD</string>
+    <string name="atenci_n_a_cliente">Atención a cliente</string>
+    <string name="desarroladora">Tiger-Software</string>
+    <string name="de">von</string>
+    <string name="bienvenido_al_m_dulo_de_atenci_n_a_clientes">Bienvenido al módulo de atención a clientes</string>
+    <string name="para_nosotros_es_muy_importante_estar_en_contacto_contigo_as_que_ponemos_a_tu_disposici_n_nuestro_whatsapp_para_cualquier_duda_sobre_tu_pedido">Para nosotros es muy importante estar en contacto contigo así que ponemos a tu disposición nuestro WhatsApp para cualquier duda sobre tu pedido</string>
+    <string name="estamos_cerca_de_t_escribenos_aqu">Estamos cerca de tí, escribenos aquí</string>
+    <string name="enviar">Enviar</string>
+    <string name="flash_tlc_de_alta_calidad_combinado_con_un_controlador_de_alta_calidad_l_der_en_la_industria_adecuado_para_ordenadores_de_sobremesa_port_tiles_miniordenadores_todo_en_uno_y_otros_ordenadores_comerciales_velocidad_de_lectura_m_x_500_mb_s_velocidad_de_escritura_m_x_450_mb_s_3_a_os_de_garant_a_limitada">♦ Flash TLC de alta calidad, combinado con un controlador de alta calidad líder en la industria. ♦ Adecuado para ordenadores de sobremesa, portátiles, miniordenadores, todo en uno y otros ordenadores comerciales ♦ Velocidad de lectura (máx.): 500 MB/s; Velocidad de escritura (máx.): 450 MB/s. ♦ 3 años de garantía limitada.</string>
+    <string name="disco_duro_xraydisk_ssd_2_5_sata3_ssd_120gb_240gb_256gb_disco_duro_interno_de_estado_s_lido_para_ordenador_port_til_de_escritorio">Disco Duro XrayDisk SSD 2,5 \'\'SATA3 Ssd 120gb 240gb 256gb disco duro interno de estado sólido para ordenador portátil de escritorio</string>
+    <string name="bienvenido_a_la_ssd_tienda_somos_una_micro_empresa_orgullosamente_de_la_ciudad_de_san_andres_tuxtla_y_tenemos_como_misi_n_ofrecer_dispositivos_de_almacenamiento_de_estado_s_lido_para_equipo_de_c_mputo_de_nuestros_clientes_con_la_mejor_calidad_variedad_y_precio_ncontamos_varios_m_todos_de_pago_as_como_env_o_gratis_en_la_ciudad_el_mismo_d_a">Bienvenido a la SSD-TIENDA somos una micro-empresa orgullosamente de la ciudad de San Andres Tuxtla y tenemos como misión ofrecer dispositivos de almacenamiento de estado sólido para equipo de cómputo de nuestros clientes con la mejor calidad, variedad y precio.\nContamos varios métodos de pago así como envío gratis en la ciudad el mismo día.</string>
+    <string name="ir_al_cat_logo">Ir al catálogo</string>
+</resources>
