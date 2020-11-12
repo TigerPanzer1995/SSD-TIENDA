@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -26,6 +27,11 @@ import Vista.AdaptadorNvme;
 public class Nvme extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout drawerLayout;
     private Spinner spinnerNvme, spinnernvmePzas;
+    private static final String nvmeMP1pza= "https://mpago.la/2RsNbdK";
+    private static final String nvmeMP2pza ="https://mpago.la/2UbEBxA";
+    private static final String nvmeMP3pza ="https://mpago.la/31wjNkq";
+    private static final String nvmeMP4pza="https://mpago.la/2kfNN1o";
+    private static final String nvmeMP5pza= "https://mpago.la/2ziA88R";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +51,7 @@ public class Nvme extends AppCompatActivity implements View.OnClickListener {
         viewPager.setAdapter(adaptadorNvme);
 
         //spinner nvme
-        String [] opciones ={"128GB $300.00","240GB $500.00"};
+        String [] opciones ={"240GB $830.00"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_item_spinnernvme,opciones);
         spinnerNvme.setAdapter(adapter);
         //spiner piezas
@@ -119,13 +125,37 @@ public class Nvme extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
         switch (view.getId()){
             case R.id.btn_return_nvme:
                 HomeActivity.redireccionActivity(this, SSD.class);
                 break;
 
             case R.id.comprarNvme:
-                Toast.makeText(this, "Vas a comprar esto", Toast.LENGTH_SHORT).show();
+                String capacidad = spinnerNvme.getSelectedItem().toString();
+                String piezas = spinnernvmePzas.getSelectedItem().toString();
+                if (capacidad.equals("240GB $830.00")&& piezas.equals("1")){
+                    Toast.makeText(this, "Vas a comprar 01 pzas NVME 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(nvmeMP1pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("240GB $830.00") && piezas.equals("2")){
+                    Toast.makeText(this, "Vas a comprar 02 pzas NVME 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(nvmeMP2pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("240GB $830.00") && piezas.equals("3")){
+                    Toast.makeText(this, "Vas a comprar 03 pzas NVME 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(nvmeMP3pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("240GB $830.00")&& piezas.equals("4")){
+                    Toast.makeText(this, "Vas a comprar 04 pzas NVME 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(nvmeMP4pza));
+                    startActivity(intent);
+            }else if (capacidad.equals("240GB $830.00") && piezas.equals("5")){
+                    Toast.makeText(this, "Vas a comprar 05 pzas NVME 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(nvmeMP5pza));
+                    startActivity(intent);
+                }
+
                 break;
         }
     }
