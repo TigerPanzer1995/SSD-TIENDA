@@ -88,13 +88,16 @@ public class SSD extends AppCompatActivity {
     }
     public void ClickSata(View v){
         HomeActivity.redireccionActivity(this,Sata.class);
+        Toast.makeText(this, "Desliza hacía la izquierda la imagen del principio para ver más", Toast.LENGTH_LONG).show();
     }
     public void ClickNvme(View view){
         HomeActivity.redireccionActivity(this,Nvme.class);
+        Toast.makeText(this, "Desliza hacía la izquierda la imagen del principio para ver más", Toast.LENGTH_LONG).show();
 
     }
     public void ClickMsata(View view){
         HomeActivity.redireccionActivity(this,Msata.class);
+        Toast.makeText(this, "Desliza hacía la izquierda la imagen del principio para ver más", Toast.LENGTH_LONG).show();
 
     }
 

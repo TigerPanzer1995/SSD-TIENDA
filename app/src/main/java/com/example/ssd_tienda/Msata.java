@@ -9,9 +9,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,15 +24,27 @@ import com.google.android.gms.tasks.Task;
 import Base_de_datos.MainActivity;
 import Vista.AdapterMsata;
 
-public class Msata extends AppCompatActivity {
+public class Msata extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout drawerLayout;
     private ViewPager viewPagerMsata;
     private Spinner spinnerMsata,spinnerPzas;
+    private static final String msata1pza = "https://mpago.la/17WUjsX";
+    private static final String msata2pza = "https://mpago.la/2gv95wj";
+    private static final String msata3pza = "https://mpago.la/2ad2pNA";
+    private static final String msata4pza = "https://mpago.la/2BrrAYv";
+    private static final String msata5pza = "https://mpago.la/1e1grC4";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_msata);
+        //botones
+        Button btn_return_Msata = findViewById(R.id.btn_return_msata);
+        btn_return_Msata.setOnClickListener(this);
+        Button comprar_msata = findViewById(R.id.comprarMsata);
+        comprar_msata.setOnClickListener(this);
+
+
         drawerLayout= findViewById(R.id.drawer_layout);
         viewPagerMsata = findViewById(R.id.imagePagerMsata);
         AdapterMsata adapterMsata = new AdapterMsata(this);
@@ -38,7 +52,7 @@ public class Msata extends AppCompatActivity {
 
         //spinner msata
         spinnerMsata= findViewById(R.id.spinnerMSata);
-        String [] opciones ={"128GB $300.00","240GB $500.00"};
+        String [] opciones ={"256GB $706.00"};
         ArrayAdapter <String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_item_spinnermsata,opciones);
         spinnerMsata.setAdapter(adapter);
 
@@ -109,22 +123,43 @@ public class Msata extends AppCompatActivity {
 
     }
 
-    public void Comprar(View view){
-        String selecion = spinnerMsata.getSelectedItem().toString();
-        if(selecion.equals("128GB $300.00")){
-            Toast.makeText(this, "Vas a comprar un ssd de 128gb", Toast.LENGTH_SHORT).show();
-        }else if (selecion.equals("240GB $500.00")){
-            Toast.makeText(this, "Vas a comprar un ssd de 240gb", Toast.LENGTH_SHORT).show();
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
 
-        }
 
-    }
-    public void Carrito (View view){
-        String selecion = spinnerMsata.getSelectedItem().toString();
-        if(selecion.equals("128GB $300.00")){
-            Toast.makeText(this, "Agregaste un ssd de 128gb", Toast.LENGTH_SHORT).show();
-        }else if (selecion.equals("240GB $500.00")){
-            Toast.makeText(this, "Agregaste un ssd de 240gb", Toast.LENGTH_SHORT).show();
+        switch (view.getId()){
+            case R.id.btn_return_msata:
+                HomeActivity.redireccionActivity(this, SSD.class);
+                break;
+
+            case R.id.comprarMsata:
+                //240 gb msata
+                String capacidad = spinnerMsata.getSelectedItem().toString();
+                String piezas = spinnerPzas.getSelectedItem().toString();
+                if (capacidad.equals("256GB $706.00")&& piezas.equals("1")){
+                    Toast.makeText(this, "Vas a comprar 01 pza SSD MSATA 256GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(msata1pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("256GB $706.00")&& piezas.equals("2")){
+                    Toast.makeText(this, "Vas a comprar 02 pza SSD MSATA 256GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(msata2pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("256GB $706.00")&& piezas.equals("3")){
+                    Toast.makeText(this, "Vas a comprar 03 pza SSD MSATA 256GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(msata3pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("256GB $706.00")&& piezas.equals("4")){
+                    Toast.makeText(this, "Vas a comprar 04 pza SSD MSATA 256GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(msata4pza));
+                    startActivity(intent);
+                }else if (capacidad.equals("256GB $706.00")&& piezas.equals("5")){
+                    Toast.makeText(this, "Vas a comprar 05 pza SSD MSATA 256GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(msata5pza));
+                    startActivity(intent);
+                }
+
+                break;
 
         }
 

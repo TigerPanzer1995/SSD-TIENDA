@@ -9,9 +9,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,17 +24,34 @@ import com.google.android.gms.tasks.Task;
 import Base_de_datos.MainActivity;
 import Vista.AdapterSata;
 
-public class Sata extends AppCompatActivity {
+public class Sata extends AppCompatActivity implements View.OnClickListener {
     private Spinner spinnerSata,spinnerPzasSata;
     DrawerLayout drawerLayout;
+    //link 128gb
+    private final static String Uno128gb= "https://mpago.la/2DKsckT";
+    private final static String Dos128GB =  "https://mpago.la/2JdqYDL";
+    private final static String Tres128gb = "https://mpago.la/2WX2xCi";
+    private final static String Cuatro128gb = "https://mpago.la/17RMnJb";
+    private final static  String Cinco128gb = "https://mpago.la/2vVBcYp";
 
-
+    //link 250gb
+    private final static String Uno240gb= "https://mpago.la/2hdJnWV";
+    private final static String Dos240gb = "https://mpago.la/2EgN8Ch";
+    private final static String Tres240gb = "https://mpago.la/2gZNjud";
+    private final static String Cuatro240gb ="https://mpago.la/27nkCgq";
+    private final static String Cinco240gb = "https://mpago.la/2ddTusN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sata);
         drawerLayout= findViewById(R.id.drawer_layout);
+        //botones
+        Button btn_return_sata = findViewById(R.id.btn_return_sata);
+        btn_return_sata.setOnClickListener(this);
+        Button btn_comprar_Sata = findViewById(R.id.comprarSata);
+        btn_comprar_Sata.setOnClickListener(this);
+
         ViewPager viewPager = findViewById(R.id.imagePagerSata);
          spinnerSata= findViewById(R.id.spinnerSata);
          spinnerPzasSata = findViewById(R.id.spinnerPzasSata);
@@ -41,7 +60,7 @@ public class Sata extends AppCompatActivity {
         viewPager.setAdapter(adapterSata);
 
         //spinner
-        String [] opciones = {"128GB $300.00","240GB $500.00"};
+        String [] opciones = {"128GB $565.00","240GB $948.00"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.spinner_item_spinnersata,opciones);
         spinnerSata.setAdapter(adapter);
         //spinner piezas
@@ -111,5 +130,69 @@ public class Sata extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        switch (view.getId()){
+            case R.id.btn_return_sata:
+                HomeActivity.redireccionActivity(this, SSD.class);
+                break;
+            case R.id.comprarSata:
+               //128 gb link
+                String capacidad= spinnerSata.getSelectedItem().toString();
+                String piezas = spinnerPzasSata.getSelectedItem().toString();
+                if (capacidad.equals("128GB $565.00")&& piezas.equals("1")){
+                    Toast.makeText(this, "Vas a comprar 01pza SSD SATA 128GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Uno128gb));
+                    startActivity(intent);
 
+                }else if (capacidad.equals("128GB $565.00") &&piezas.equals("2")){
+                    Toast.makeText(this, "Vas a comprar 02pzas SSD SATA 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Dos128GB));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("128GB $565.00")&& piezas.equals("3")){
+                    Toast.makeText(this, "Vas a comprar 03pzas SSD SATA 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Tres128gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("128GB $565.00")&& piezas.equals("4")){
+                    Toast.makeText(this, "Vas a comprar 04pzas SSD SATA 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Cuatro128gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("128GB $565.00")&& piezas.equals("5")){
+                    Toast.makeText(this, "Vas a comprar 05pzas SSD SATA 128GB", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Cinco128gb));
+                    startActivity(intent);
+                    //240gb
+                }else if (capacidad.equals("240GB $948.00")&& piezas.equals("1")){
+                    Toast.makeText(this, "Vas a comprar 01pza SSD SATA 250GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Uno240gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("240GB $948.00")&& piezas.equals("2")){
+                    Toast.makeText(this, "Vas a comprar 02pza SSD SATA 250GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Dos240gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("240GB $948.00")&& piezas.equals("3")){
+                    Toast.makeText(this, "Vas a comprar 03pza SSD SATA 250GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Tres240gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("240GB $948.00") && piezas.equals("4")){
+                    Toast.makeText(this, "Vas a comprar 04pza SSD SATA 250GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Cuatro240gb));
+                    startActivity(intent);
+
+                }else if (capacidad.equals("240GB $948.00")&& piezas.equals("5")){
+                    Toast.makeText(this, "Vas a comprar 05pza SSD SATA 250GB  ", Toast.LENGTH_SHORT).show();
+                    intent.setData(Uri.parse(Cinco240gb));
+                    startActivity(intent);
+                }
+                break;
+        }
+
+    }
 }//fin de la clase

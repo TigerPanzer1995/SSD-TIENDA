@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,7 +23,7 @@ import com.google.android.gms.tasks.Task;
 import Base_de_datos.MainActivity;
 import Vista.AdaptadorNvme;
 
-public class Nvme extends AppCompatActivity {
+public class Nvme extends AppCompatActivity implements View.OnClickListener {
     DrawerLayout drawerLayout;
     private Spinner spinnerNvme, spinnernvmePzas;
 
@@ -30,6 +31,12 @@ public class Nvme extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nvme);
+        //botones
+        Button btn_return_nvme = findViewById(R.id.btn_return_nvme);
+        btn_return_nvme.setOnClickListener(this);
+        Button btn_comprar_nvme = findViewById(R.id.comprarNvme);
+        btn_comprar_nvme.setOnClickListener(this);
+
         drawerLayout = findViewById(R.id.drawer_layout);
         spinnerNvme= findViewById(R.id.spinnerNvme);
 
@@ -109,25 +116,17 @@ public class Nvme extends AppCompatActivity {
 
     }
 
-    public void ComprarNvme(View view){
-        String selecion = spinnerNvme.getSelectedItem().toString();
-        if(selecion.equals("128GB $300.00")){
-            Toast.makeText(this, "Vas a comprar un ssd de 128gb", Toast.LENGTH_SHORT).show();
-        }else if (selecion.equals("240GB $500.00")){
-            Toast.makeText(this, "Vas a comprar un ssd de 240gb", Toast.LENGTH_SHORT).show();
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_return_nvme:
+                HomeActivity.redireccionActivity(this, SSD.class);
+                break;
+
+            case R.id.comprarNvme:
+                Toast.makeText(this, "Vas a comprar esto", Toast.LENGTH_SHORT).show();
+                break;
         }
-
     }
-    public void CarritoNvme(View view){
-        String selecion = spinnerNvme.getSelectedItem().toString();
-        if(selecion.equals("128GB $300.00")){
-            Toast.makeText(this, "Agregaste un ssd de 128gb", Toast.LENGTH_SHORT).show();
-        }else if (selecion.equals("240GB $500.00")){
-            Toast.makeText(this, "Agregaste un ssd de 240gb", Toast.LENGTH_SHORT).show();
-
-        }
-
-    }
-
 }//fin de la clase

@@ -22,17 +22,28 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:text="@string/bienvenido_a_la_ssd_tienda_somos_una_micro_empresa_orgullosamente_de_la_ciudad_de_san_andres_tuxtla_y_tenemos_como_misi_n_ofrecer_dispositivos_de_almacenamiento_de_estado_s_lido_para_equipo_de_c_mputo_de_nuestros_clientes_con_la_mejor_calidad_variedad_y_precio_ncontamos_varios_m_todos_de_pago_as_como_env_o_gratis_en_la_ciudad_el_mismo_d_a"
                 android:gravity="center_horizontal" />
-        <ImageView
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/medios"/>
+       <TextView
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Proceso de compra"
+           android:gravity="center"
+           android:textSize="40sp"
+           android:textStyle="bold"
+           android:textColor="#000000"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:text="@string/_1_selecciona_tu_producto_de_nuestro_cat_logo_n2_da_clic_en_comprar_n3_acreditado_tu_pago_te_enviara_al_rea_de_entregas_para_que_nos_propociones_los_datos_de_tu_domicilio_recibimos_tu_pago_a_trav_s_tarjetas_de_cr_dito_o_d_bito_n4_recibe_tu_producto_y_disfruta"/>
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"/>
@@ -41,9 +52,9 @@
             android:id="@+id/btnCata"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:textColor="#ff0000"
-            android:background="#00ff00"
+            android:background="#f7ff00"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:text="@string/ir_al_cat_logo"/>
